@@ -1,0 +1,22 @@
+#ifndef UTILITIES_H
+#define UTILITIES_H
+
+#include <string>
+#include <vector>
+#include <sstream>
+#include <cstdlib>
+#include <iostream>
+
+namespace dstd {
+    void tokenize(const std::string& str, std::vector<std::string>& tokens, const std::string& delimiters = " ");
+
+    std::string trimleft(const std::string& str, const std::string& whitespace = " \t\r\n");
+    std::string trimright(const std::string& str, const std::string& whitespace = " \t\r\n");
+    std::string trim(const std::string& str, const std::string& whitespace = " \t\r\n");
+
+    std::string strreverse(const std::string& str);
+
+    std::string lltostr(long long val, int base = 10);
+}
+
+#endif // UTILITIES_H
