@@ -65,11 +65,11 @@ std::string dstd::strreverse(const std::string& str)
 }
 
 
-std::string dstd::lltostr(long long val, int base)
+std::string dstd::lltostr(long long val)
 {
-    char buffer[1000];
-    lltoa(val, buffer, base);
-    std::string myStr(buffer);
+    std::stringstream mySStream;
 
-    return myStr;
+    mySStream << val;
+
+    return mySStream.str();
 }

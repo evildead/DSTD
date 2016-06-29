@@ -4,6 +4,7 @@
 #include <string>
 #include <sstream>
 #include <cmath>
+#include <map>
 #include "Utilities/utilities.h"
 using namespace std;
 
@@ -18,7 +19,7 @@ namespace dstd {
     public:
         BigInt(const string& val = "0");
 
-        BigInt(long long val = 0);
+        BigInt(long long val);
 
         BigInt(const BigInt& other);
 
@@ -121,14 +122,16 @@ namespace dstd {
         BigInt& operator+=(const BigInt& rhs)
         {
             if(this->sign_ == rhs.sign_) {
-                sumAbsoluteVal(rhs);
+                //sumAbsoluteVal(rhs);
+                sumAbsoluteValV2(rhs);
             }
             else {
                 int compareAbsValuesResult = compareAbsValue(rhs);
                 if(compareAbsValuesResult < 0) {
                     this->sign_ = !(this->sign_);
                 }
-                subtractAbsoluteVal(rhs);
+                //subtractAbsoluteVal(rhs);
+                subtractAbsoluteValV2(rhs);
 
                 if(this->val_.compare("0") == 0) {
                     this->sign_ = true;
@@ -156,7 +159,7 @@ namespace dstd {
                 this->sign_ = false;
             }
 
-            multiplyAbsoluteVal(rhs);
+            multiplyAbsoluteValFFT(rhs);
 
             return *this; // return the result by reference
         }
@@ -210,14 +213,23 @@ namespace dstd {
             return tmp;   // return old value
         }
 
+        BigInt power(unsigned int exponent);
+
     protected:
         void swap(const BigInt& other);
 
         void sumAbsoluteVal(const BigInt& other);
+        void sumAbsoluteValV2(const BigInt& other);
 
         void subtractAbsoluteVal(const BigInt& other);
+        void subtractAbsoluteValV2(const BigInt& other);
 
         void multiplyAbsoluteVal(const BigInt& other);
+        void multiplyAbsoluteValFFT(const BigInt& other);
+
+    protected:
+        static void makeSameSize(string &a, string &b);
+        static void removeLeadingZeroes(string &str);
     };
 
 }

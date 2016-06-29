@@ -16,7 +16,7 @@ namespace dstd {
 
     std::string strreverse(const std::string& str);
 
-    std::string lltostr(long long val, int base = 10);
+    std::string lltostr(long long val);
 }
 
 #endif // UTILITIES_H
