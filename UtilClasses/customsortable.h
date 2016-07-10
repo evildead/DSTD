@@ -2,6 +2,8 @@
 #define CUSTOMSORTABLE_H
 
 #include <string>
+#include <vector>
+
 namespace dstd {
 
     class CustomSortable
@@ -12,7 +14,7 @@ namespace dstd {
         long long customSortVal_;
 
     public:
-        CustomSortable(std::string strLabel, long long numLabel, long long customSortVal = -1) :
+        CustomSortable(std::string strLabel = "", long long numLabel = -1LL, long long customSortVal = -1LL) :
             strLabel_(strLabel), numLabel_(numLabel), customSortVal_(customSortVal)
         {
 
@@ -69,6 +71,8 @@ namespace dstd {
         }
     };
 
+
+    void countingSort(std::vector<CustomSortable> &v);
 }
 
 #endif // CUSTOMSORTABLE_H

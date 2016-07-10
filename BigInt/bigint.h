@@ -232,6 +232,10 @@ namespace dstd {
         static void removeLeadingZeroes(string &str);
     };
 
+
+    BigInt computeFibonacciModified(unsigned int a, unsigned int b, unsigned int n);
+    BigInt fibonacci(unsigned int n);
+    BigInt factorial(unsigned int n);
 }
 
 #endif // BIGINT_H

@@ -6,7 +6,8 @@ CONFIG -= qt
 SOURCES += main.cpp \
     BigInt/bigint.cpp \
     Utilities/utilities.cpp \
-    FFT/fft.cpp
+    FFT/fft.cpp \
+    UtilClasses/customsortable.cpp
 
 HEADERS += \
     BigInt/bigint.h \

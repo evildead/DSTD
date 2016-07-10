@@ -7,59 +7,10 @@
 using namespace std;
 using namespace dstd;
 
-BigInt computeFibonacciModified(unsigned int a, unsigned int b, unsigned int n)
-{
-    BigInt prevprev = a;
-    BigInt prev = b;
-    BigInt val;
-
-    for(unsigned int i = 2; i < n; i++) {
-        val = prev.power(2) + prevprev;
-        prevprev = prev;
-        prev = val;
-    }
-
-    return val;
-}
-
-BigInt fibonacci(unsigned int n)
-{
-    if(n < 3) {
-        return BigInt(1);
-    }
-
-    BigInt prevprev = BigInt(1);
-    BigInt prev = BigInt(1);
-    BigInt val;
-
-    for(unsigned int i = 3; i <= n; i++) {
-        val = prev + prevprev;
-        prevprev = prev;
-        prev = val;
-    }
-
-    return val;
-}
-
-BigInt factorial(unsigned int n)
-{
-    if((n == 0) || (n == 1)) {
-        return BigInt(1);
-    }
-    else if(n == 2) {
-        return BigInt(2);
-    }
-
-    BigInt val(n);
-    for(unsigned int i = (n-1); i >= 1; i--) {
-        val *= BigInt(i);
-    }
-
-    return val;
-}
-
 int main(int argc, char *argv[])
 {
+    // A BUNCH OF TESTS
+
     /*
     string myStr = "0001000";
     cout << trimright(myStr, "0") << '\n';
@@ -123,17 +74,19 @@ int main(int argc, char *argv[])
     cout << BigInt(outStr) << endl;
     */
 
+    /*
     unsigned int A, B, N;
     cin >> A;
     cin >> B;
     cin >> N;
 
-    BigInt val = computeFibonacciModified(A, B, N);
+    //BigInt val = computeFibonacciModified(A, B, N);
     //BigInt val = fibonacci(A);
-    //BigInt val = factorial(A);
+    BigInt val = factorial(A);
 
-    cout << val << '\n';
+    cout << val << endl;
     //cout << upperPowerOfTwo(A + B) << endl;
+    */
 
     return 0;
 
