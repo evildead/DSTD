@@ -6,36 +6,43 @@
 
 namespace dstd {
 
+    template <class TNumLabel, class TSortVal, class TData = nullptr_t>
     class CustomSortable
     {
     protected:
+        TNumLabel numLabel_;
+        TSortVal customSortVal_;
         std::string strLabel_;
-        long long numLabel_;
-        long long customSortVal_;
+        TData customData_;
 
     public:
-        CustomSortable(std::string strLabel = "", long long numLabel = -1LL, long long customSortVal = -1LL) :
-            strLabel_(strLabel), numLabel_(numLabel), customSortVal_(customSortVal)
+        CustomSortable(const TNumLabel& numLabel, const TSortVal& customSortVal, std::string strLabel = "", const TData& customData = TData()) :
+            numLabel_(numLabel), customSortVal_(customSortVal), strLabel_(strLabel), customData_(customData)
         {
 
         }
 
-        inline long long getNumLabel() const
+        CustomSortable()
+        {
+
+        }
+
+        inline const TNumLabel& getNumLabel() const
         {
             return this->numLabel_;
         }
 
-        inline void setNumLabel(long long numLabel)
+        inline void setNumLabel(const TNumLabel& numLabel)
         {
             this->numLabel_ = numLabel;
         }
 
-        inline long long getCustomSortVal() const
+        inline const TSortVal& getCustomSortVal() const
         {
             return this->customSortVal_;
         }
 
-        inline void setCustomSortVal(long long customSortVal)
+        inline void setCustomSortVal(const TSortVal& customSortVal)
         {
             this->customSortVal_ = customSortVal;
         }
@@ -50,7 +57,17 @@ namespace dstd {
             this->strLabel_ = strLabel;
         }
 
-        friend bool operator< (const CustomSortable& l, const CustomSortable& r)
+        inline const TData& getCustomData() const
+        {
+            return this->customData_;
+        }
+
+        inline void setCustomData(const TData& customData)
+        {
+            this->customData_ = customData;
+        }
+
+        friend bool operator< (const CustomSortable<TNumLabel, TSortVal, TData>& l, const CustomSortable<TNumLabel, TSortVal, TData>& r)
         {
             if(l.customSortVal_ == r.customSortVal_) {
                 return l.numLabel_ < r.numLabel_;
@@ -60,7 +77,7 @@ namespace dstd {
             }
         }
 
-        friend bool operator> (const CustomSortable& l, const CustomSortable& r)
+        friend bool operator> (const CustomSortable<TNumLabel, TSortVal, TData>& l, const CustomSortable<TNumLabel, TSortVal, TData>& r)
         {
             if(l.customSortVal_ == r.customSortVal_) {
                 return l.numLabel_ > r.numLabel_;
@@ -72,7 +89,7 @@ namespace dstd {
     };
 
 
-    void countingSort(std::vector<CustomSortable> &v);
+    //void countingSort(std::vector<CustomSortable> &v);
 }
 
 #endif // CUSTOMSORTABLE_H

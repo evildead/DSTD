@@ -73,3 +73,61 @@ std::string dstd::lltostr(long long val)
 
     return mySStream.str();
 }
+
+std::vector<int> dstd::getAnagramsOccurrences(const std::string& haystack, const std::string& needle)
+{
+    std::vector<int> occurrences;
+
+    if((haystack.size() == 0) || (needle.size() == 0) || (haystack.size() < needle.size())) {
+        return occurrences;
+    }
+
+    /// needle chars map //////////////////////////////////
+    std::map<char, int> needleCharsMap;
+    std::map<char, int>::iterator it;
+
+    for(unsigned int i = 0; i < needle.size(); i++) {
+        it = needleCharsMap.find( needle.at(i) );
+        // found
+        if( it != needleCharsMap.end() ) {
+            it->second++;
+        }
+        // not found
+        else {
+            needleCharsMap[ needle.at(i) ] = 1;
+        }
+    }
+    ///////////////////////////////////////////////////////
+
+    unsigned int startWindow = 0;
+    unsigned int endWindow = startWindow + (needle.size() - 1);
+
+    while(endWindow < haystack.size()) {
+        /// compute window chars map //////////////////////
+        std::map<char, int> windowCharsMap;
+        std::map<char, int>::iterator wit;
+
+        for(unsigned int i = startWindow; i <= endWindow; i++) {
+            wit = windowCharsMap.find( haystack.at(i) );
+            // found
+            if( wit != windowCharsMap.end() ) {
+                wit->second++;
+            }
+            // not found
+            else {
+                windowCharsMap[ haystack.at(i) ] = 1;
+            }
+        }
+        ///////////////////////////////////////////////////////
+
+        // anagram match!!!
+        if(windowCharsMap == needleCharsMap) {
+            occurrences.push_back(startWindow);
+        }
+
+        startWindow++;
+        endWindow++;
+    }
+
+    return occurrences;
+}

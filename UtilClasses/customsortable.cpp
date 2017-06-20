@@ -28,6 +28,7 @@ countingSort(A[])
          C[i] ← C[i] - 1
 */
 
+/*
 void dstd::countingSort(std::vector<CustomSortable> &v)
 {
     int vSize = (int)v.size();
@@ -65,3 +66,4 @@ void dstd::countingSort(std::vector<CustomSortable> &v)
         }
     }
 }
+*/

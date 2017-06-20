@@ -6,6 +6,7 @@
 #include <sstream>
 #include <cstdlib>
 #include <iostream>
+#include <map>
 
 namespace dstd {
     void tokenize(const std::string& str, std::vector<std::string>& tokens, const std::string& delimiters = " ");
@@ -17,6 +18,8 @@ namespace dstd {
     std::string strreverse(const std::string& str);
 
     std::string lltostr(long long val);
+
+    std::vector<int> getAnagramsOccurrences(const std::string& haystack, const std::string& needle);
 }
 
 #endif // UTILITIES_H

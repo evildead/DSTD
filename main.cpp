@@ -88,6 +88,21 @@ int main(int argc, char *argv[])
     //cout << upperPowerOfTwo(A + B) << endl;
     */
 
+    /*
+    CustomSortable<long long, long long> myCS(1, 100);
+    */
+
+    string haystack, needle;
+    cin >> haystack;
+    cin >> needle;
+
+    vector<int> occurrences = getAnagramsOccurrences(haystack, needle);
+
+    for(auto i = occurrences.begin(); i != occurrences.end(); ++i) {
+        cout << *i << ' ';
+    }
+    cout << endl;
+
     return 0;
 
 }
