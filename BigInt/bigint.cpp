@@ -1,3 +1,10 @@
+/*************************************************
+ *                                               *
+ *   Author: Danilo Carrabino                    *
+ *                                               *
+ *************************************************/
+
+
 #include "bigint.h"
 #include "FFT/fft.h"
 using namespace dstd;

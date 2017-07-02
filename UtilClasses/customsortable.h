@@ -1,3 +1,10 @@
+/*************************************************
+ *                                               *
+ *   Author: Danilo Carrabino                    *
+ *                                               *
+ *************************************************/
+
+
 #ifndef CUSTOMSORTABLE_H
 #define CUSTOMSORTABLE_H
 

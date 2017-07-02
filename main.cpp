@@ -1,3 +1,10 @@
+/*************************************************
+ *                                               *
+ *   Author: Danilo Carrabino                    *
+ *                                               *
+ *************************************************/
+
+
 #include "BigInt/bigint.h"
 #include "Utilities/utilities.h"
 #include "UtilClasses/customsortable.h"

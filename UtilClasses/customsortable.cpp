@@ -1,3 +1,10 @@
+/*************************************************
+ *                                               *
+ *   Author: Danilo Carrabino                    *
+ *                                               *
+ *************************************************/
+
+
 #include "customsortable.h"
 using namespace dstd;
 
