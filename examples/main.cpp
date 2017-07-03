@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
     // A BUNCH OF TESTS
 
     /*
+    // TRIM Tests ///////////////////////////////////////////////////
     string myStr = "0001000";
     cout << trimright(myStr, "0") << '\n';
     cout << trimleft(myStr, "0") << '\n';
@@ -26,7 +27,10 @@ int main(int argc, char *argv[])
     string myStr2 = "\t\n        0001000 \t\t\n\r     ";
     cout << trimright(myStr2) << '\n';
     cout << trimleft(myStr2) << '\n';
+    */
 
+    // BigInt Tests /////////////////////////////////////////////////
+    /*
     //BigInt myBint("9852084579746529486592485678465494649");
     BigInt myBint("  0000000029764298383429367");
     BigInt myOtherBint(29764298383429367);
@@ -82,6 +86,7 @@ int main(int argc, char *argv[])
     */
 
     /*
+    // computeFibonacciModified Test ////////////////////////////////
     unsigned int A, B, N;
     cin >> A;
     cin >> B;
@@ -96,9 +101,7 @@ int main(int argc, char *argv[])
     */
 
     /*
-    CustomSortable<long long, long long> myCS(1, 100);
-    */
-
+    // getAnagramsOccurrences Tests /////////////////////////////////
     string haystack, needle;
     cin >> haystack;
     cin >> needle;
@@ -109,6 +112,33 @@ int main(int argc, char *argv[])
         cout << *i << ' ';
     }
     cout << endl;
+    */
+
+    /*
+    // CustomSortable and countingSort Tests ////////////////////////
+    CustomSortable<long long, int, string> myCS1(59273862283437, 4, "59273862283437", "First");
+    CustomSortable<long long, int, string> myCS2(14273862283417, 2, "14273862283417", "Second");
+    CustomSortable<long long, int, string> myCS3(14277777283417, 1, "14277777283417", "Third");
+    CustomSortable<long long, int, string> myCS4(64273888888413, 3, "64273888888413", "Fourth");
+
+    vector<CustomSortable<long long, int, string> > v;
+    v.push_back(myCS1);
+    v.push_back(myCS2);
+    v.push_back(myCS3);
+    v.push_back(myCS4);
+
+    countingSort<long long, string>(v);
+    */
+
+    /*
+    // LCS Tests ////////////////////////////////////////////////////
+    vector<string> lcsStrings;
+    string a = "ABCDEF";
+    string b = "FBDAMN";
+    //string a = "SHINCHAN";
+    //string b = "NOHARAAA";
+    int retVal = lcs(a, b, lcsStrings, true);
+    */
 
     return 0;
 

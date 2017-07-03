@@ -5,8 +5,7 @@ INCLUDEPATH += $$PWD
 SOURCES += \
     $$PWD/BigInt/bigint.cpp \
     $$PWD/Utilities/utilities.cpp \
-    $$PWD/FFT/fft.cpp \
-    $$PWD/UtilClasses/customsortable.cpp
+    $$PWD/FFT/fft.cpp
 
 HEADERS += \
     $$PWD/BigInt/bigint.h \
