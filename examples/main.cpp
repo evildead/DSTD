@@ -20,13 +20,26 @@ int main(int argc, char *argv[])
 
     /*
     // TRIM Tests ///////////////////////////////////////////////////
+    cout << "**************************************" << endl;
+    cout << "*** String manipulation: TRIM TEST ***" << endl;
+    cout << "**************************************" << endl;
     string myStr = "0001000";
-    cout << trimright(myStr, "0") << '\n';
-    cout << trimleft(myStr, "0") << '\n';
+    cout << "Trimming 0's on the right of 0001000 returns:" << endl;
+    cout << trimright(myStr, "0") << endl;
+    cout << endl;
+    cout << "Trimming 0's on the left of 0001000 returns:" << endl;
+    cout << trimleft(myStr, "0") << endl;
+    cout << endl;
 
     string myStr2 = "\t\n        0001000 \t\t\n\r     ";
-    cout << trimright(myStr2) << '\n';
-    cout << trimleft(myStr2) << '\n';
+    cout << "Function trimright with default parameters on" << endl;
+    cout << "\\t\\n        0001000 \\t\\t\\n\\r      returns:" << endl;
+    cout << trimright(myStr2) << endl;
+    cout << endl;
+    cout << "Function trimleft with default parameters on" << endl;
+    cout << "\\t\\n        0001000 \\t\\t\\n\\r      returns:" << endl;
+    cout << trimleft(myStr2) << endl;
+    cout << endl;
     */
 
     // BigInt Tests /////////////////////////////////////////////////
@@ -66,15 +79,20 @@ int main(int argc, char *argv[])
     */
 
     /*
+    cout << "**************************" << endl;
+    cout << "*** BigInt: Power TEST ***" << endl;
+    cout << "**************************" << endl;
     BigInt myBint("72634515982734674");
-    myBint = myBint.power(1000);
-    cout << myBint << '\n';
+    myBint = myBint.power(100);
+    cout << "72634515982734674 ^ 100 is:" << endl;
+    cout << myBint << endl;
     */
 
     /*
-    BigInt myBint("64");
-    BigInt myOtherBint(22);
-    cout << myBint * myOtherBint << '\n';
+    BigInt myBint("6464827368237648237443432323");
+    BigInt myOtherBint("97284664287298375610074623623434");
+    cout << "6464827368237648237443432323 multiplied by 97284664287298375610074623623434 is:" << endl;
+    cout << myBint * myOtherBint << endl;
     */
 
     /*

@@ -93,6 +93,12 @@ namespace dstd {
                 return l.customSortVal_ > r.customSortVal_;
             }
         }
+
+        friend std::ostream& operator<< (std::ostream& os, const CustomSortable<TNumLabel, TSortVal, TData>& val)
+        {
+            os << val.strLabel_;
+            return os;
+        }
     };
 
 

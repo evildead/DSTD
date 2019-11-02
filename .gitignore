@@ -1,5 +1,6 @@
 # Qt meta stuff #
 *.pro.user
+build-*
 
 # Compiled source #
 ###################
